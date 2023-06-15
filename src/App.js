@@ -3,7 +3,7 @@ import QuizStartPage from './Components/QuizStartPage'
 import blob1 from './Images/blob-1.svg'
 import blob2 from './Images/blob-2.svg'
 import QuestionsPage from './Components/QuestionsPage'
-import {motion, AnimatePresence} from 'framer-motion'
+import {motion} from 'framer-motion'
 
 export default function App(){
     const [pageTracker,setPageTracker] = React.useState(1)

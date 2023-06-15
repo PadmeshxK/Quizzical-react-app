@@ -21,11 +21,11 @@ export default function Question(props){
     }
 
     React.useEffect(()=>{
-        const optionsArrTemp = [props.correct_answer, ...props.incorrect_answers]
+        const optionsArrTemp = [correctAnswer, ...props.incorrect_answers]
         const shuffledOptionsArrTemp = shuffleArray(optionsArrTemp)
         setOptionsArr(shuffledOptionsArrTemp.map(answer => decodeHtmlCharCodes(answer)))
        
-    },[props.changeListen])
+    },[correctAnswer, props.incorrect_answers])
     
     React.useEffect(() => {
         for (let i = 0; i < optionsArr.length; i++) {
@@ -34,7 +34,7 @@ export default function Question(props){
             break;
           }
         }
-      }, [optionsArr])
+      }, [optionsArr,correctAnswer,questionId,setAnswersArr])
 
     React.useEffect(()=>{
         if (completionState === false){
